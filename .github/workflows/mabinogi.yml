@@ -1,0 +1,43 @@
+name: 마비노기 경매장 수집
+
+on:
+  schedule:
+    - cron: "0,30 * * * *"   # 매시 00분, 30분 (UTC 기준이지만 매시간이라 한국 시간과 같음)
+  workflow_dispatch:          # Actions 탭에서 수동 실행 버튼
+
+permissions:
+  contents: read
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: 저장소 내려받기
+        uses: actions/checkout@v4
+
+      - name: 파이썬 설치
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: "pip"
+
+      - name: 패키지 설치
+        run: pip install -r requirements.txt
+
+      - name: GCP 인증
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      - name: 노트북 실행
+        env:
+          NEXON_MABINOGI_API_KEY: ${{ secrets.NEXON_MABINOGI_API_KEY }}
+          GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+        run: >
+          jupyter nbconvert --to notebook --execute
+          notebooks/mabinogi_collect.ipynb
+          --output-dir /tmp
+          --ExecutePreprocessor.kernel_name=python3
+          --ExecutePreprocessor.timeout=600

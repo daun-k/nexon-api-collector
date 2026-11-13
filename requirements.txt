@@ -1,0 +1,16 @@
+# API 요청
+requests
+
+# 데이터 처리 (select_dtypes에 "str"을 쓰므로 3 이상 필요)
+pandas>=3
+
+# .env 파일 읽기 (로컬 실행용)
+python-dotenv
+
+# BigQuery 업로드
+google-cloud-bigquery
+pyarrow
+
+# GitHub Actions에서 노트북 실행
+nbconvert
+ipykernel
