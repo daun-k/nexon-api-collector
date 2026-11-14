@@ -1,9 +1,9 @@
-name: 마비노기 영웅전 수집
+name: Mabinogi Heroes Marketplace & Notice Collector
 
 on:
   schedule:
-    - cron: "30 19 * * *"    # 매일 한국 시간 04:30 (UTC 19:30)
-  workflow_dispatch:          # Actions 탭에서 수동 실행 버튼
+    - cron: "30 19 * * *"   # Daily at 04:30 KST (19:30 UTC)
+  workflow_dispatch:         # Manual run from the Actions tab
 
 permissions:
   contents: read
@@ -14,24 +14,24 @@ jobs:
     timeout-minutes: 15
 
     steps:
-      - name: 저장소 내려받기
+      - name: Check out repository
         uses: actions/checkout@v6
 
-      - name: 파이썬 설치
+      - name: Set up Python
         uses: actions/setup-python@v6
         with:
           python-version: "3.13"
           cache: "pip"
 
-      - name: 패키지 설치
+      - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: GCP 인증
+      - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v3
         with:
           credentials_json: ${{ secrets.GCP_SA_KEY }}
 
-      - name: 노트북 실행
+      - name: Run collection notebook
         env:
           NEXON_HEROES_API_KEY: ${{ secrets.NEXON_HEROES_API_KEY }}
           GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
