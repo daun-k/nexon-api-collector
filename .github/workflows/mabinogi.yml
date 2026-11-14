@@ -1,8 +1,6 @@
 name: 마비노기 경매장 수집
 
 on:
-  schedule:
-    - cron: "0,30 * * * *"   # 매시 00분, 30분 (UTC 기준이지만 매시간이라 한국 시간과 같음)
   workflow_dispatch:          # Actions 탭에서 수동 실행 버튼
 
 permissions:
