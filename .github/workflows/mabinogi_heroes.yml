@@ -1,9 +1,7 @@
 name: Mabinogi Heroes Marketplace & Notice Collector
 
 on:
-  schedule:
-    - cron: "30 19 * * *"   # Daily at 04:30 KST (19:30 UTC)
-  workflow_dispatch:         # Manual run from the Actions tab
+  workflow_dispatch:   # Triggered daily at 08:05 KST by cron-job.org via the GitHub API
 
 permissions:
   contents: read
