@@ -98,7 +98,7 @@ nexon-api-collector/
 │   ├── mabinogi_collect.ipynb          # Mabinogi collection, loading, deduplication
 │   └── mabinogi_heroes_collect.ipynb   # Mabinogi Heroes collection, loading, deduplication
 ├── requirements.txt
-├── .gitignore                       # excludes .env and gcp-key.json
+├── .gitignore
 ├── README.md
 └── README.en.md
 ```

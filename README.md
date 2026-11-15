@@ -98,7 +98,7 @@ nexon-api-collector/
 │   ├── mabinogi_collect.ipynb          # 마비노기 수집, 적재, 중복 정리
 │   └── mabinogi_heroes_collect.ipynb   # 마비노기 영웅전 수집, 적재, 중복 정리
 ├── requirements.txt
-├── .gitignore                       # .env, gcp-key.json 제외
+├── .gitignore
 ├── README.md
 └── README.en.md
 ```
