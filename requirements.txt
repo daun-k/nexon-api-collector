@@ -14,3 +14,7 @@ pyarrow
 # GitHub Actions에서 노트북 실행
 nbconvert
 ipykernel
+
+# BigQuery 업로드, 중복 정리
+google-cloud-bigquery
+pyarrow
