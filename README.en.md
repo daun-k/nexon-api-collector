@@ -6,7 +6,7 @@
 
 **Data based on NEXON Open API** (https://openapi.nexon.com)
 
-Raw collected data is not published.
+The collected raw data is not made public.
 
 ## 1. Purpose
 
