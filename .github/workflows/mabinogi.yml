@@ -35,7 +35,7 @@ jobs:
           GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
         run: >
           jupyter nbconvert --to notebook --execute
-          notebooks/mabinogi_collect.ipynb
+          notebooks/01_collection/mabinogi_collect.ipynb
           --output-dir /tmp
           --ExecutePreprocessor.kernel_name=python3
           --ExecutePreprocessor.timeout=600

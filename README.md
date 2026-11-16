@@ -95,8 +95,10 @@ nexon-api-collector/
 │       ├── mabinogi.yml             # 마비노기 경매장 수집 워크플로
 │       └── mabinogi_heroes.yml      # 마비노기 영웅전 거래소·공지 수집 워크플로
 ├── notebooks/
-│   ├── mabinogi_collect.ipynb          # 마비노기 수집, 적재, 중복 정리
-│   └── mabinogi_heroes_collect.ipynb   # 마비노기 영웅전 수집, 적재, 중복 정리
+│   ├── 01_collection/
+│   │   ├── mabinogi_collect.ipynb          # 마비노기 수집, 적재, 중복 정리
+│   │   └── mabinogi_heroes_collect.ipynb   # 마비노기 영웅전 수집, 적재, 중복 정리
+│   └── 02_analysis/                 # 수집 데이터 분석 (예정)
 ├── requirements.txt
 ├── .gitignore
 ├── README.md

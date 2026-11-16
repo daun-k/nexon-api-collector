@@ -1,20 +1,16 @@
 # API 요청
-requests
+requests==2.34.2
 
 # 데이터 처리 (select_dtypes에 "str"을 쓰므로 3 이상 필요)
-pandas>=3
+pandas==3.0.5
 
 # .env 파일 읽기 (로컬 실행용)
-python-dotenv
+python-dotenv==1.2.3
 
-# BigQuery 업로드
-google-cloud-bigquery
-pyarrow
+# BigQuery 업로드, 중복 정리
+google-cloud-bigquery==3.43.0
+pyarrow==25.0.1
 
 # GitHub Actions에서 노트북 실행
 nbconvert
-ipykernel
-
-# BigQuery 업로드, 중복 정리
-google-cloud-bigquery
-pyarrow
+ipykernel==7.3.0

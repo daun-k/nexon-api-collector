@@ -86,7 +86,7 @@ The collection interval is shorter than the API window, so collection windows ov
 - When rows share the same key, only the most recently collected row is kept (`ROW_NUMBER()`, `CREATE OR REPLACE TABLE`).
 - Cleaning Mabinogi on every run would scan the whole table 48 times a day, so it is cleaned once a day.
 
-## 7. Repository structure
+## 7. Folder Structure
 
 ```
 nexon-api-collector/
@@ -95,8 +95,10 @@ nexon-api-collector/
 │       ├── mabinogi.yml             # Mabinogi auction collection workflow
 │       └── mabinogi_heroes.yml      # Mabinogi Heroes marketplace and notice workflow
 ├── notebooks/
-│   ├── mabinogi_collect.ipynb          # Mabinogi collection, loading, deduplication
-│   └── mabinogi_heroes_collect.ipynb   # Mabinogi Heroes collection, loading, deduplication
+│   ├── 01_collection/
+│   │   ├── mabinogi_collect.ipynb          # Mabinogi collection, loading, deduplication
+│   │   └── mabinogi_heroes_collect.ipynb   # Mabinogi Heroes collection, loading, deduplication
+│   └── 02_analysis/                 # Analysis of collected data (planned)
 ├── requirements.txt
 ├── .gitignore
 ├── README.md
